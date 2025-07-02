@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Atata.Xunit</RootNamespace>
+    <Version>4.0.0-beta.1</Version>
+    <Description>
+.NET library that integrates Atata with xUnit v3.
+
+The package targets .NET Standard 2.0, which supports .NET 5+, .NET Framework 4.6.1+ and .NET Core/Standard 2.0+.
+    </Description>
+    <RepositoryUrl>https://github.com/atata-framework/atata-xunit-v3</RepositoryUrl>
+    <PackageId>Atata.Xunit.v3</PackageId>
+    <PackageTags>atata automation testing test xunit</PackageTags>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageProjectUrl>https://atata.io</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Atata" Version="4.0.0-beta.1" />
+    <PackageReference Include="PolySharp" Version="1.15.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="xunit.v3.extensibility.core" Version="2.0.3" />
+  </ItemGroup>
+
+</Project>
