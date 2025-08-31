@@ -26,6 +26,8 @@ public abstract class AtataGlobalFixture : AtataFixture
     public override async ValueTask InitializeAsync()
     {
         AtataContext.GlobalProperties.ModeOfCurrent = AtataContextModeOfCurrent.AsyncLocalBoxed;
+        AtataContext.GlobalProperties.RootNamespace = GetType().Namespace;
+
         ConfigureAtataContextGlobalProperties(AtataContext.GlobalProperties);
 
         AtataContext.BaseConfiguration.UseAssertionExceptionFactory(XunitAssertionExceptionFactory.Instance);
