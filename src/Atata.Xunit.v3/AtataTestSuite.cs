@@ -17,11 +17,12 @@ public abstract class AtataTestSuite : AtataFixture
 
     private protected sealed override void ConfigureAtataContext(AtataContextBuilder builder)
     {
-        ITest xunitTest = TestContext.Current.Test!;
+        ITestContext xunitTestContext = TestContext.Current;
+        ITest xunitTest = xunitTestContext.Test!;
         var testFullName = xunitTest.TestDisplayName;
         var testClassType = GetType();
         var testName = testFullName.Replace(testClassType.FullName!, null).TrimStart('.');
-        var output = TestContext.Current.TestOutputHelper!;
+        var output = xunitTestContext.TestOutputHelper!;
         var traits = GetTestTraits(xunitTest);
 
         builder.UseTestName(testName);
