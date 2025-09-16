@@ -34,6 +34,19 @@ public abstract class AtataTestSuite : AtataFixture
 
         builder.LogConsumers.Add(new TextOutputLogConsumer(output.WriteLine));
 
+        if (TestSuiteAtataContextMetadataHolder.Items.TryGetValue(testClassType, out var suiteContextMetadata))
+            suiteContextMetadata.ApplyToTestBuilder(builder, this);
+
+        string? testMethodName = xunitTest.TestCase.TestMethod?.MethodName;
+
+        if (testMethodName?.Length > 0)
+        {
+            MethodInfo? testMethod = testClassType.GetMethod(testMethodName);
+
+            if (testMethod is not null)
+                TestAtataContextMetadata.GetForMethod(testMethod).ApplyToTestBuilder(builder, this);
+        }
+
         ConfigureTestAtataContext(builder);
     }
 
