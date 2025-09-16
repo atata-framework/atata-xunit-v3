@@ -5,7 +5,7 @@
     <RootNamespace>Atata.Xunit</RootNamespace>
     <Version>4.0.0-beta.2</Version>
     <Description>
-.NET library that integrates Atata with xUnit v3.
+C#/.NET library that integrates Atata with xUnit v3.
 
 The package targets .NET Standard 2.0, which supports .NET 5+, .NET Framework 4.6.1+ and .NET Core/Standard 2.0+.
     </Description>
