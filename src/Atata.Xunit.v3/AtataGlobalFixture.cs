@@ -42,14 +42,13 @@ public abstract class AtataGlobalFixture : AtataFixture
         OnAfterGlobalSetup();
     }
 
-    public override ValueTask DisposeAsync()
+    public override async ValueTask DisposeAsync()
     {
         OnBeforeGlobalTeardown();
 
-        ValueTask resultTask = base.DisposeAsync();
+        await base.DisposeAsync().ConfigureAwait(false);
 
         OnAfterGlobalTeardown();
-        return resultTask;
     }
 
     /// <summary>
