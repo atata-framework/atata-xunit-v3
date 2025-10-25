@@ -25,8 +25,11 @@ public sealed class WithCollectionAndClassFixturesTests :
             AtataContext.Global);
 
     [Fact]
-    public void Context_Variables() =>
+    public void Context_Variables()
+    {
         Context.Variables[nameof(SomeCollectionFixture)].Should().Be(true);
+        Context.Variables[nameof(SomeClassFixture<WithCollectionAndClassFixturesTests>)].Should().Be(true);
+    }
 
     [Fact]
     public void Context_Artifacts() =>
