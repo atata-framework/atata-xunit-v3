@@ -38,6 +38,7 @@ public abstract class AtataFixture : IAsyncLifetime
     /// Disposes the <see cref="Context"/>.
     /// </summary>
     /// <returns>A <see cref="ValueTask"/> object.</returns>
+    [SuppressMessage("Usage", "CA1816:Dispose methods should call SuppressFinalize")]
     public virtual async ValueTask DisposeAsync()
     {
         if (Context is not null)

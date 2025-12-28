@@ -42,6 +42,7 @@ public abstract class AtataGlobalFixture : AtataFixture
         OnAfterGlobalSetup();
     }
 
+    [SuppressMessage("Usage", "CA1816:Dispose methods should call SuppressFinalize")]
     public override async ValueTask DisposeAsync()
     {
         OnBeforeGlobalTeardown();

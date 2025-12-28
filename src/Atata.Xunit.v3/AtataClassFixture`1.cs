@@ -41,6 +41,7 @@ public class AtataClassFixture<TClass> : AtataFixture
     {
     }
 
+    [SuppressMessage("Usage", "CA1816:Dispose methods should call SuppressFinalize")]
     public override ValueTask DisposeAsync()
     {
         TestSuiteAtataContextMetadataHolder.Items.TryRemove(_testClassType, out _);
