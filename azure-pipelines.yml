@@ -23,12 +23,22 @@ jobs:
   displayName: Run tests on
   strategy:
     matrix:
-      Linux:
+      Ubuntu:
+        code: ubuntu-net
         imageName: 'ubuntu-latest'
+        testTargetFramework: net10.0
       macOS:
+        code: mac-net
         imageName: 'macOS-latest'
+        testTargetFramework: net10.0
       Windows:
+        code: win-net
         imageName: 'windows-latest'
+        testTargetFramework: net10.0
+      'Windows / .NET Framework':
+        code: win-netfx
+        imageName: 'windows-latest'
+        testTargetFramework: net462
   pool:
     vmImage: $(imageName)
   steps:
@@ -37,21 +47,21 @@ jobs:
     inputs:
       version: $(netSdkVersion)
   - task: DotNetCoreCLI@2
-    displayName: Build solution
+    displayName: Build test projects
     inputs:
       command: build
-      projects: '**/*.slnx'
+      projects: 'test/*/*Tests.csproj'
       arguments: -c $(buildConfiguration) -p:RunAnalyzers=false
   - task: DotNetCoreCLI@2
-    displayName: Run tests
-    timeoutInMinutes: 10
+    displayName: Run integration tests
+    timeoutInMinutes: 5
     inputs:
       command: test
-      projects: '**/*Tests.csproj'
-      arguments: -c $(buildConfiguration) -s "azure-pipelines.runsettings" --no-build
+      projects: 'test/*/*IntegrationTests.csproj'
+      arguments: -c $(buildConfiguration) -s "azure-pipelines.runsettings" --no-build -f $(testTargetFramework)
   - task: PublishPipelineArtifact@1
-    displayName: Publish test artifacts
+    displayName: Publish integration test artifacts
     condition: failed()
     inputs:
-      artifactName: Artifacts-$(imageName)
-      targetPath: test/Atata.Xunit.v3.IntegrationTests/bin/$(buildConfiguration)/net10.0/artifacts
+      artifactName: $(code)_integration_test_artifacts
+      targetPath: test/Atata.Xunit.v3.IntegrationTests/bin/$(buildConfiguration)/$(testTargetFramework)/artifacts
