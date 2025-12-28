@@ -38,7 +38,7 @@ jobs:
       'Windows / .NET Framework':
         code: win-netfx
         imageName: 'windows-latest'
-        testTargetFramework: net462
+        testTargetFramework: net472
   pool:
     vmImage: $(imageName)
   steps:
