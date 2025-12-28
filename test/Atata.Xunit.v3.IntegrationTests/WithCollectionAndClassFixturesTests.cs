@@ -28,7 +28,7 @@ public sealed class WithCollectionAndClassFixturesTests :
     public void Context_Variables()
     {
         Context.Variables[nameof(SomeCollectionFixture)].Should().Be(true);
-        Context.Variables[nameof(SomeClassFixture<WithCollectionAndClassFixturesTests>)].Should().Be(true);
+        Context.Variables[nameof(SomeClassFixture<>)].Should().Be(true);
     }
 
     [Fact]

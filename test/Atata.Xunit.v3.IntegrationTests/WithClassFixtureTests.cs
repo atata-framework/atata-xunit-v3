@@ -21,7 +21,7 @@ public sealed class WithClassFixtureTests :
     [SetVariable("method-attribute-variable", true)]
     public void Context_Variables()
     {
-        Context.Variables[nameof(SomeClassFixture<WithClassFixtureTests>)].Should().Be(true);
+        Context.Variables[nameof(SomeClassFixture<>)].Should().Be(true);
         Context.Variables["class-attribute-variable"].Should().Be(true);
         Context.Variables["method-attribute-variable"].Should().Be(true);
     }
