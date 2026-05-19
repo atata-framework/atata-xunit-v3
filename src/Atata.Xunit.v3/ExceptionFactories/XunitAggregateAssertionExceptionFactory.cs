@@ -1,6 +1,4 @@
-﻿using Xunit.Sdk;
-
-namespace Atata.Xunit;
+﻿namespace Atata.Xunit;
 
 public sealed class XunitAggregateAssertionExceptionFactory : IAggregateAssertionExceptionFactory
 {
