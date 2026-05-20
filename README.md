@@ -100,6 +100,8 @@ public sealed class SampleTests : AtataTestSuite
 }
 ```
 
+Use `Context` property of the base class to access the current `AtataContext` instance.
+
 ### Class fixture
 
 Create class fixture:
