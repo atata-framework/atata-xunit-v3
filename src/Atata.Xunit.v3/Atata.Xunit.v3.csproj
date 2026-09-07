@@ -7,13 +7,16 @@
     <Description>
 C#/.NET library that integrates Atata with xUnit v3.
 
+Atata.Xunit.v3 on GitHub: https://github.com/atata-framework/atata-xunit-v3
+Atata Framework documentation: https://atata.io/
+
 The package targets .NET 8.0 and .NET Framework 4.7.2.
     </Description>
     <RepositoryUrl>https://github.com/atata-framework/atata-xunit-v3</RepositoryUrl>
     <PackageId>Atata.Xunit.v3</PackageId>
     <PackageTags>atata automation testing test xunit</PackageTags>
     <PackageReleaseNotes>Changelog: https://github.com/atata-framework/atata-xunit-v3/blob/main/CHANGELOG.md</PackageReleaseNotes>
-    <PackageProjectUrl>https://atata.io</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/atata-framework/atata-xunit-v3</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
