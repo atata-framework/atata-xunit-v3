@@ -13,6 +13,8 @@ Initial version release.
 
 ### Added
 
+- Add Atata package reference v4.0.0
+- Add xunit.v3.extensibility.core package reference v4.0.0
 - Add `AtataTestSuite` class.
 - Add `AtataGlobalFixture` class.
 - Add `AtataClassFixture<TClass>` class.
