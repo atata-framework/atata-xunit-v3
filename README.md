@@ -35,6 +35,11 @@ Or using Package Manager:
 Install-Package Atata.Xunit.v3
 ```
 
+## Dependencies
+
+- [Atata](https://www.nuget.org/packages/Atata) package
+- [xunit.v3.extensibility.core](https://www.nuget.org/packages/xunit.v3.extensibility.core) package
+
 ## Usage
 
 ### Global fixture
