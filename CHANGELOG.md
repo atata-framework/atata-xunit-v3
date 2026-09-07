@@ -25,4 +25,4 @@ Initial version release.
 - Add `XunitAssertionExceptionFactory` class.
 - Add `XunitAggregateAssertionExceptionFactory` class.
 
-[Unreleased]: https://github.com/atata-framework/atata-htmlvalidation/compare/v4.0.0...HEAD
+[Unreleased]: https://github.com/atata-framework/atata-xunit-v3/compare/v4.0.0...HEAD
