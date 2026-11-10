@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Upgrade Atata package reference to v4.0.1.
 - Upgrade xunit.v3.extensibility.core package reference to v4.0.3.
 
 ## [4.0.0] - 2026-09-07
